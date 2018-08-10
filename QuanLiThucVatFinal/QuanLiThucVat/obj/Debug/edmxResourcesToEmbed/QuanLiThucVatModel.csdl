@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuanLyThucVatModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="QuanLyThucVatEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Tb_Bo" EntityType="QuanLyThucVatModel.Tb_Bo" />
+    <EntitySet Name="Tb_GiaTriKinhTe" EntityType="QuanLyThucVatModel.Tb_GiaTriKinhTe" />
+    <EntitySet Name="Tb_HinhAnh" EntityType="QuanLyThucVatModel.Tb_HinhAnh" />
+    <EntitySet Name="Tb_Ho" EntityType="QuanLyThucVatModel.Tb_Ho" />
+    <EntitySet Name="Tb_KhaNangSinhTruong" EntityType="QuanLyThucVatModel.Tb_KhaNangSinhTruong" />
+    <EntitySet Name="Tb_KhaNangTaiSinh" EntityType="QuanLyThucVatModel.Tb_KhaNangTaiSinh" />
+    <EntitySet Name="Tb_NguoiDung" EntityType="QuanLyThucVatModel.Tb_NguoiDung" />
+    <EntitySet Name="Tb_ThucVat" EntityType="QuanLyThucVatModel.Tb_ThucVat" />
+    <AssociationSet Name="FK__Tb_Bo__IDLop__5EBF139D" Association="QuanLyThucVatModel.FK__Tb_Bo__IDLop__5EBF139D">
+      <End Role="Tb_Bo" EntitySet="Tb_Bo" />
+      <End Role="Tb_Ho" EntitySet="Tb_Ho" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tb_Ho__IDBo__619B8048" Association="QuanLyThucVatModel.FK__Tb_Ho__IDBo__619B8048">
+      <End Role="Tb_Bo" EntitySet="Tb_Bo" />
+      <End Role="Tb_Ho" EntitySet="Tb_Ho" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tb_ThucVa__IDGia__1A14E395" Association="QuanLyThucVatModel.FK__Tb_ThucVa__IDGia__1A14E395">
+      <End Role="Tb_GiaTriKinhTe" EntitySet="Tb_GiaTriKinhTe" />
+      <End Role="Tb_ThucVat" EntitySet="Tb_ThucVat" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tb_NguoiD__IDHIn__49C3F6B7" Association="QuanLyThucVatModel.FK__Tb_NguoiD__IDHIn__49C3F6B7">
+      <End Role="Tb_HinhAnh" EntitySet="Tb_HinhAnh" />
+      <End Role="Tb_NguoiDung" EntitySet="Tb_NguoiDung" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tb_ThucVa__IDHIn__1B0907CE" Association="QuanLyThucVatModel.FK__Tb_ThucVa__IDHIn__1B0907CE">
+      <End Role="Tb_HinhAnh" EntitySet="Tb_HinhAnh" />
+      <End Role="Tb_ThucVat" EntitySet="Tb_ThucVat" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tb_ThucVat__IDBo__5FB337D6" Association="QuanLyThucVatModel.FK__Tb_ThucVat__IDBo__5FB337D6">
+      <End Role="Tb_Ho" EntitySet="Tb_Ho" />
+      <End Role="Tb_ThucVat" EntitySet="Tb_ThucVat" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tb_ThucVat__IDHo__60A75C0F" Association="QuanLyThucVatModel.FK__Tb_ThucVat__IDHo__60A75C0F">
+      <End Role="Tb_Ho" EntitySet="Tb_Ho" />
+      <End Role="Tb_ThucVat" EntitySet="Tb_ThucVat" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tb_ThucVa__IDHIn__182C9B23" Association="QuanLyThucVatModel.FK__Tb_ThucVa__IDHIn__182C9B23">
+      <End Role="Tb_KhaNangSinhTruong" EntitySet="Tb_KhaNangSinhTruong" />
+      <End Role="Tb_ThucVat" EntitySet="Tb_ThucVat" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tb_ThucVa__IDKha__1920BF5C" Association="QuanLyThucVatModel.FK__Tb_ThucVa__IDKha__1920BF5C">
+      <End Role="Tb_KhaNangTaiSinh" EntitySet="Tb_KhaNangTaiSinh" />
+      <End Role="Tb_ThucVat" EntitySet="Tb_ThucVat" />
+    </AssociationSet>
+    <EntitySet Name="Tb_TinTuc" EntityType="QuanLyThucVatModel.Tb_TinTuc" />
+    <AssociationSet Name="FK__Tb_TinTuc__IDHIn__6FE99F9F" Association="QuanLyThucVatModel.FK__Tb_TinTuc__IDHIn__6FE99F9F">
+      <End Role="Tb_HinhAnh" EntitySet="Tb_HinhAnh" />
+      <End Role="Tb_TinTuc" EntitySet="Tb_TinTuc" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Tb_Bo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenBo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Tb_Ho" Relationship="QuanLyThucVatModel.FK__Tb_Bo__IDLop__5EBF139D" FromRole="Tb_Bo" ToRole="Tb_Ho" />
+    <NavigationProperty Name="Tb_Ho1" Relationship="QuanLyThucVatModel.FK__Tb_Ho__IDBo__619B8048" FromRole="Tb_Bo" ToRole="Tb_Ho" />
+  </EntityType>
+  <EntityType Name="Tb_GiaTriKinhTe">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MoTa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DiemTuongUng" Type="Double" />
+    <NavigationProperty Name="Tb_ThucVat" Relationship="QuanLyThucVatModel.FK__Tb_ThucVa__IDGia__1A14E395" FromRole="Tb_GiaTriKinhTe" ToRole="Tb_ThucVat" />
+  </EntityType>
+  <EntityType Name="Tb_HinhAnh">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DuongDan" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Tb_NguoiDung" Relationship="QuanLyThucVatModel.FK__Tb_NguoiD__IDHIn__49C3F6B7" FromRole="Tb_HinhAnh" ToRole="Tb_NguoiDung" />
+    <NavigationProperty Name="Tb_ThucVat" Relationship="QuanLyThucVatModel.FK__Tb_ThucVa__IDHIn__1B0907CE" FromRole="Tb_HinhAnh" ToRole="Tb_ThucVat" />
+    <NavigationProperty Name="Tb_TinTuc" Relationship="QuanLyThucVatModel.FK__Tb_TinTuc__IDHIn__6FE99F9F" FromRole="Tb_HinhAnh" ToRole="Tb_TinTuc" />
+  </EntityType>
+  <EntityType Name="Tb_Ho">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenHo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IDBo" Type="Int32" />
+    <NavigationProperty Name="Tb_Bo" Relationship="QuanLyThucVatModel.FK__Tb_Bo__IDLop__5EBF139D" FromRole="Tb_Ho" ToRole="Tb_Bo" />
+    <NavigationProperty Name="Tb_Bo1" Relationship="QuanLyThucVatModel.FK__Tb_Ho__IDBo__619B8048" FromRole="Tb_Ho" ToRole="Tb_Bo" />
+    <NavigationProperty Name="Tb_ThucVat" Relationship="QuanLyThucVatModel.FK__Tb_ThucVat__IDBo__5FB337D6" FromRole="Tb_Ho" ToRole="Tb_ThucVat" />
+    <NavigationProperty Name="Tb_ThucVat1" Relationship="QuanLyThucVatModel.FK__Tb_ThucVat__IDHo__60A75C0F" FromRole="Tb_Ho" ToRole="Tb_ThucVat" />
+  </EntityType>
+  <EntityType Name="Tb_KhaNangSinhTruong">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MoTa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DiemTuongUng" Type="Double" />
+    <NavigationProperty Name="Tb_ThucVat" Relationship="QuanLyThucVatModel.FK__Tb_ThucVa__IDHIn__182C9B23" FromRole="Tb_KhaNangSinhTruong" ToRole="Tb_ThucVat" />
+  </EntityType>
+  <EntityType Name="Tb_KhaNangTaiSinh">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MoTa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DiemTuongUng" Type="Double" />
+    <NavigationProperty Name="Tb_ThucVat" Relationship="QuanLyThucVatModel.FK__Tb_ThucVa__IDKha__1920BF5C" FromRole="Tb_KhaNangTaiSinh" ToRole="Tb_ThucVat" />
+  </EntityType>
+  <EntityType Name="Tb_NguoiDung">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MatKhau" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="HoTen" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NgaySinh" Type="DateTime" Precision="3" />
+    <Property Name="GioiTinh" Type="Boolean" />
+    <Property Name="DiaChi" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SoDienThoai" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="LaQuanTriVienCapCao" Type="Boolean" />
+    <Property Name="IDHInhAnh" Type="Int32" />
+    <NavigationProperty Name="Tb_HinhAnh" Relationship="QuanLyThucVatModel.FK__Tb_NguoiD__IDHIn__49C3F6B7" FromRole="Tb_NguoiDung" ToRole="Tb_HinhAnh" />
+  </EntityType>
+  <EntityType Name="Tb_ThucVat">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenVietNam" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TenLaTinh" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DoDayLa" Type="Double" />
+    <Property Name="DoDayVo" Type="Double" />
+    <Property Name="LuongNuocTrongLa" Type="Double" />
+    <Property Name="LuongNuocTrongVo" Type="Double" />
+    <Property Name="LuongTroThoTrongLa" Type="Double" />
+    <Property Name="LuongTroThoTrongVo" Type="Double" />
+    <Property Name="ThoiGianChayTrenLa" Type="Double" />
+    <Property Name="ThoiGianChayTrenVo" Type="Double" />
+    <Property Name="IDKhaNangSinhTruong" Type="Int32" />
+    <Property Name="IDKhaNangTaiSinh" Type="Int32" />
+    <Property Name="IDGiaTriKinhTe" Type="Int32" />
+    <Property Name="IDHInhAnh" Type="Int32" />
+    <Property Name="IDHo" Type="Int32" />
+    <NavigationProperty Name="Tb_GiaTriKinhTe" Relationship="QuanLyThucVatModel.FK__Tb_ThucVa__IDGia__1A14E395" FromRole="Tb_ThucVat" ToRole="Tb_GiaTriKinhTe" />
+    <NavigationProperty Name="Tb_HinhAnh" Relationship="QuanLyThucVatModel.FK__Tb_ThucVa__IDHIn__1B0907CE" FromRole="Tb_ThucVat" ToRole="Tb_HinhAnh" />
+    <NavigationProperty Name="Tb_Ho" Relationship="QuanLyThucVatModel.FK__Tb_ThucVat__IDBo__5FB337D6" FromRole="Tb_ThucVat" ToRole="Tb_Ho" />
+    <NavigationProperty Name="Tb_Ho1" Relationship="QuanLyThucVatModel.FK__Tb_ThucVat__IDHo__60A75C0F" FromRole="Tb_ThucVat" ToRole="Tb_Ho" />
+    <NavigationProperty Name="Tb_KhaNangSinhTruong" Relationship="QuanLyThucVatModel.FK__Tb_ThucVa__IDHIn__182C9B23" FromRole="Tb_ThucVat" ToRole="Tb_KhaNangSinhTruong" />
+    <NavigationProperty Name="Tb_KhaNangTaiSinh" Relationship="QuanLyThucVatModel.FK__Tb_ThucVa__IDKha__1920BF5C" FromRole="Tb_ThucVat" ToRole="Tb_KhaNangTaiSinh" />
+  </EntityType>
+  <Association Name="FK__Tb_Bo__IDLop__5EBF139D">
+    <End Type="QuanLyThucVatModel.Tb_Bo" Role="Tb_Bo" Multiplicity="0..1" />
+    <End Type="QuanLyThucVatModel.Tb_Ho" Role="Tb_Ho" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_Bo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tb_Ho">
+        <PropertyRef Name="IDBo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tb_Ho__IDBo__619B8048">
+    <End Type="QuanLyThucVatModel.Tb_Bo" Role="Tb_Bo" Multiplicity="0..1" />
+    <End Type="QuanLyThucVatModel.Tb_Ho" Role="Tb_Ho" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_Bo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tb_Ho">
+        <PropertyRef Name="IDBo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tb_ThucVa__IDGia__1A14E395">
+    <End Type="QuanLyThucVatModel.Tb_GiaTriKinhTe" Role="Tb_GiaTriKinhTe" Multiplicity="0..1" />
+    <End Type="QuanLyThucVatModel.Tb_ThucVat" Role="Tb_ThucVat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_GiaTriKinhTe">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tb_ThucVat">
+        <PropertyRef Name="IDGiaTriKinhTe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tb_NguoiD__IDHIn__49C3F6B7">
+    <End Type="QuanLyThucVatModel.Tb_HinhAnh" Role="Tb_HinhAnh" Multiplicity="0..1" />
+    <End Type="QuanLyThucVatModel.Tb_NguoiDung" Role="Tb_NguoiDung" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_HinhAnh">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tb_NguoiDung">
+        <PropertyRef Name="IDHInhAnh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tb_ThucVa__IDHIn__1B0907CE">
+    <End Type="QuanLyThucVatModel.Tb_HinhAnh" Role="Tb_HinhAnh" Multiplicity="0..1" />
+    <End Type="QuanLyThucVatModel.Tb_ThucVat" Role="Tb_ThucVat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_HinhAnh">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tb_ThucVat">
+        <PropertyRef Name="IDHInhAnh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tb_ThucVat__IDBo__5FB337D6">
+    <End Type="QuanLyThucVatModel.Tb_Ho" Role="Tb_Ho" Multiplicity="0..1" />
+    <End Type="QuanLyThucVatModel.Tb_ThucVat" Role="Tb_ThucVat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_Ho">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tb_ThucVat">
+        <PropertyRef Name="IDHo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tb_ThucVat__IDHo__60A75C0F">
+    <End Type="QuanLyThucVatModel.Tb_Ho" Role="Tb_Ho" Multiplicity="0..1" />
+    <End Type="QuanLyThucVatModel.Tb_ThucVat" Role="Tb_ThucVat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_Ho">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tb_ThucVat">
+        <PropertyRef Name="IDHo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tb_ThucVa__IDHIn__182C9B23">
+    <End Type="QuanLyThucVatModel.Tb_KhaNangSinhTruong" Role="Tb_KhaNangSinhTruong" Multiplicity="0..1" />
+    <End Type="QuanLyThucVatModel.Tb_ThucVat" Role="Tb_ThucVat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_KhaNangSinhTruong">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tb_ThucVat">
+        <PropertyRef Name="IDKhaNangSinhTruong" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tb_ThucVa__IDKha__1920BF5C">
+    <End Type="QuanLyThucVatModel.Tb_KhaNangTaiSinh" Role="Tb_KhaNangTaiSinh" Multiplicity="0..1" />
+    <End Type="QuanLyThucVatModel.Tb_ThucVat" Role="Tb_ThucVat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_KhaNangTaiSinh">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tb_ThucVat">
+        <PropertyRef Name="IDKhaNangTaiSinh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Tb_TinTuc">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TieuDe" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DanNhap" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IDHInhAnh" Type="Int32" />
+    <NavigationProperty Name="Tb_HinhAnh" Relationship="QuanLyThucVatModel.FK__Tb_TinTuc__IDHIn__6FE99F9F" FromRole="Tb_TinTuc" ToRole="Tb_HinhAnh" />
+  </EntityType>
+  <Association Name="FK__Tb_TinTuc__IDHIn__6FE99F9F">
+    <End Type="QuanLyThucVatModel.Tb_HinhAnh" Role="Tb_HinhAnh" Multiplicity="0..1" />
+    <End Type="QuanLyThucVatModel.Tb_TinTuc" Role="Tb_TinTuc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_HinhAnh">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tb_TinTuc">
+        <PropertyRef Name="IDHInhAnh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

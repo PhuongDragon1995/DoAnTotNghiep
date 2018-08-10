@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="19e60c453126446ba6c5337116b5e03b" Name="Diagram1">
+        <EntityTypeShape EntityType="QuanLyThucVatModel.Tb_Bo" Width="1.5" PointX="0.75" PointY="2.875" />
+        <EntityTypeShape EntityType="QuanLyThucVatModel.Tb_GiaTriKinhTe" Width="1.5" PointX="3" PointY="6.375" />
+        <EntityTypeShape EntityType="QuanLyThucVatModel.Tb_HinhAnh" Width="1.5" PointX="3" PointY="14" />
+        <EntityTypeShape EntityType="QuanLyThucVatModel.Tb_Ho" Width="1.5" PointX="3" PointY="2.625" />
+        <EntityTypeShape EntityType="QuanLyThucVatModel.Tb_KhaNangSinhTruong" Width="1.5" PointX="3" PointY="11.375" />
+        <EntityTypeShape EntityType="QuanLyThucVatModel.Tb_KhaNangTaiSinh" Width="1.5" PointX="3" PointY="8.875" />
+        <EntityTypeShape EntityType="QuanLyThucVatModel.Tb_NguoiDung" Width="1.5" PointX="5.25" PointY="13.25" />
+        <EntityTypeShape EntityType="QuanLyThucVatModel.Tb_ThucVat" Width="1.5" PointX="5.25" PointY="1.125" />
+        <AssociationConnector Association="QuanLyThucVatModel.FK__Tb_Bo__IDLop__5EBF139D" />
+        <AssociationConnector Association="QuanLyThucVatModel.FK__Tb_Ho__IDBo__619B8048" />
+        <AssociationConnector Association="QuanLyThucVatModel.FK__Tb_ThucVa__IDGia__1A14E395" />
+        <AssociationConnector Association="QuanLyThucVatModel.FK__Tb_NguoiD__IDHIn__49C3F6B7" />
+        <AssociationConnector Association="QuanLyThucVatModel.FK__Tb_ThucVa__IDHIn__1B0907CE" />
+        <AssociationConnector Association="QuanLyThucVatModel.FK__Tb_ThucVat__IDBo__5FB337D6" />
+        <AssociationConnector Association="QuanLyThucVatModel.FK__Tb_ThucVat__IDHo__60A75C0F" />
+        <AssociationConnector Association="QuanLyThucVatModel.FK__Tb_ThucVa__IDHIn__182C9B23" />
+        <AssociationConnector Association="QuanLyThucVatModel.FK__Tb_ThucVa__IDKha__1920BF5C" />
+        <EntityTypeShape EntityType="QuanLyThucVatModel.Tb_TinTuc" Width="1.5" PointX="5.25" PointY="17.875" />
+        <AssociationConnector Association="QuanLyThucVatModel.FK__Tb_TinTuc__IDHIn__6FE99F9F" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
